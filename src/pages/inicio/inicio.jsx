@@ -18,7 +18,7 @@ const Inicio = () => {
         }
         
         // Cargar servicios
-        fetch('https://beautynails-1.onrender.com/servicios')
+        fetch('https://beautynails-1.onrender.com/api/servicios')
             .then(res => res.json())
             .then(data => {
                 console.log("Servicios cargados:", data);

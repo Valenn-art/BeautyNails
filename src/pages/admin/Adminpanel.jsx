@@ -88,7 +88,7 @@ export default function AdminPanel() {
     }
 
     try {
-      const res = await fetch(`https://beautynails-1.onrender.com/servicios/
+      const res = await fetch(`https://beautynails-1.onrender.com/api/servicios/
 ${selectedServicio.ID_servicios}`, {
         method: 'PUT',
         headers: {
