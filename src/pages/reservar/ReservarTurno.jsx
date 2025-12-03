@@ -31,7 +31,7 @@ export default function ReservarTurno() {
   useEffect(() => {
     if (fecha && token) {
       setLoading(true);
-      fetch(`https://beautynails-1.onrender.com/api/turnos/disponibles/${fecha}?personal=2`, {
+      fetch(`https://beautynails-1.onrender.com/turnos/disponibles/${fecha}?personal=2`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(r => r.json())

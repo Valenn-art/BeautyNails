@@ -25,7 +25,7 @@ export default function MisTurnos() {
 
   const cargarTurnos = async () => {
     try {
-      const res = await fetch(`https://beautynails-1.onrender.com/api/mis-turnos/${user.ID_usuarios}`, {
+      const res = await fetch(`https://beautynails-1.onrender.com/mis-turnos/${user.ID_usuarios}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
