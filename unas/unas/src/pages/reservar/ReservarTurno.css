@@ -1,0 +1,84 @@
+.reservar-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.reservar-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.reservar-card h2 {
+  color: #29513b;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #29513b;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #e4d6c6;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.horarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.horarios-grid button {
+  padding: 1rem;
+  border: 2px solid #e4d6c6;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #29513b;
+}
+
+.horarios-grid button:hover,
+.horarios-grid button.selected {
+  background: #29513b;
+  color: white;
+  border-color: #29513b;
+}
+
+.btn-reservar {
+  width: 100%;
+  padding: 1rem;
+  background: #29513b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.btn-reservar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

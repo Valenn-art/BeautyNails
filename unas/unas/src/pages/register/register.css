@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Playfair Display", serif;
+    background: linear-gradient(145deg, #faffdc, #fceee2);
+    color: #29513b;
+}
+
+.auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.register-box {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 440px;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    position: relative;
+}
+
+.register-box::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px solid #e4d6c6;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.register-box h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #29513b;
+    margin-bottom: 1.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+.register-form {
+    position: relative;
+    z-index: 1;
+}
+
+label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #29513b;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #f5f0e8;
+    border: 1px solid #e4d6c6;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s;
+    font-family: "Playfair Display", serif;
+}
+
+input:focus {
+    background-color: #fff;
+    border-color: #c4b19a;
+    box-shadow: 0 0 0 3px rgba(228, 214, 198, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #29513b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(41, 81, 59, 0.2);
+    font-family: "Playfair Display", serif;
+    margin-top: 0.5rem;
+}
+
+button:hover:not(:disabled) {
+    background-color: #1f3e2d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(41, 81, 59, 0.3);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.divider {
+    border-top: 1px solid #e6e0d9;
+    margin: 1.8rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.auth-switch {
+    text-align: center;
+    color: #29513b;
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 1;
+}
+
+.auth-switch span {
+    font-weight: 700;
+    color: #b08f6e;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.auth-switch span:hover {
+    color: #8d6f54;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .register-box {
+        padding: 2rem;
+    }
+    
+    .register-box h2 {
+        font-size: 1.3rem;
+    }
+}

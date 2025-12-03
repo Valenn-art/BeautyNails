@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: "Playfair Display", serif;
+    background: linear-gradient(145deg, #faffdc, #fceee2);
+    color: #29513b;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+.inicio-container {
+    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 1rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(41, 81, 59, 0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #29513b;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.btn-login, .btn-register {
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: "Playfair Display", serif;
+}
+
+.btn-login {
+    background-color: #29513b;
+    color: white;
+}
+
+.btn-login:hover {
+    background-color: #1f3e2d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(41, 81, 59, 0.3);
+}
+
+.btn-register {
+    background-color: #e4d6c6;
+    color: #29513b;
+}
+
+.btn-register:hover {
+    background-color: #d7c5b1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(228, 214, 198, 0.5);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-info span {
+    font-weight: 600;
+    color: #29513b;
+}
+
+.btn-mis-turnos,
+.btn-admin {
+    padding: 0.6rem 1.5rem;
+    background-color: #29513b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: "Playfair Display", serif;
+}
+
+.btn-mis-turnos:hover,
+.btn-admin:hover {
+    background-color: #1f3e2d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(41, 81, 59, 0.3);
+}
+
+.btn-admin {
+    background-color: #6c63ff;
+}
+
+.btn-admin:hover {
+    background-color: #5a52d5;
+}
+
+.btn-cerrar-sesion {
+    padding: 0.6rem 1.5rem;
+    background: #c44;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: "Playfair Display", serif;
+}
+
+.btn-cerrar-sesion:hover {
+    background: #a33;
+    transform: translateY(-2px);
+}
+
+.servicios {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.servicios-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #29513b;
+    font-weight: 700;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.servicio-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.servicio-image {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+}
+
+.servicio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.servicio-card:hover .servicio-image img {
+    transform: scale(1.08);
+}
+
+.servicio-info {
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.servicio-info h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #29513b;
+    font-weight: 600;
+}
+
+.servicio-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.precio {
+    font-weight: 700;
+    color: #b8860b;
+    font-size: 1.1rem;
+}
+
+.duracion {
+    color: #666;
+}
+
+.btn-agendar {
+    width: 100%;
+    padding: 0.6rem;
+    background-color: #29513b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: "Playfair Display", serif;
+}
+
+.btn-agendar:hover {
+    background-color: #1f3e2d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(41, 81, 59, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .inicio-container {
+        height: auto;
+    }
+    
+    .header {
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.6rem;
+    }
+    
+    .servicios {
+        padding: 1.5rem;
+    }
+    
+    .servicios-title {
+        font-size: 1.6rem;
+    }
+    
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+}
