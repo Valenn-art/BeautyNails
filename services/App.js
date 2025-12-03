@@ -21,8 +21,5 @@ app.use('/api', usuarios);
 app.use('/', turnos);
 app.use('/', servicios);
 
-app.get("/", (req, res) => {
-  res.send("Backend funcionando en Render 🚀");
-});
 
 module.exports = app;
