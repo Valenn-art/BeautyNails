@@ -14,12 +14,6 @@ export default function MisTurnos() {
   const token = localStorage.getItem('token');
   const user = JSON.parse(localStorage.getItem('user'));
 
-  // ✅ Función para formatear fecha correctamente
-  const formatearFecha = (fecha) => {
-    const [year, month, day] = fecha.split('T')[0].split('-');
-    return `${day}/${month}/${year}`;
-  };
-
   useEffect(() => {
     if (!token || !user) {
       alert("Debes iniciar sesión");
@@ -31,7 +25,7 @@ export default function MisTurnos() {
 
   const cargarTurnos = async () => {
     try {
-      const res = await fetch(`https://beautynails-1.onrender.com/mis-turnos/${user.ID_usuarios}`, {
+      const res = await fetch(`https://beautynails-1.onrender.com/turnos/mis-turnos/${user.ID_usuarios}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -55,7 +49,7 @@ export default function MisTurnos() {
     if (!confirm("¿Estás segura de que querés cancelar este turno?")) return;
 
     try {
-      const res = await fetch(`https://beautynails-1.onrender.com/turnos/${turnoId}`, {
+      const res = await fetch(`https://beautynails-1.onrender.com/turnos/turnosdel/${turnoId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -63,7 +57,7 @@ export default function MisTurnos() {
       if (!res.ok) throw new Error("Error al cancelar turno");
 
       alert("Turno cancelado con éxito");
-      cargarTurnos();
+      cargarTurnos(); // Recargar la lista
     } catch (err) {
       alert(`Error: ${err.message}`);
     }
@@ -71,9 +65,10 @@ export default function MisTurnos() {
 
   const iniciarEdicion = async (turno) => {
     setEditandoTurno(turno.ID_turnos);
-    setNuevaFecha(turno.Fecha.split('T')[0]);
+    setNuevaFecha(turno.Fecha.split('T')[0]); // Formato YYYY-MM-DD
     setNuevaHora('');
     
+    // Cargar horarios disponibles para esa fecha
     try {
       const res = await fetch(
         `https://beautynails-1.onrender.com/turnos/disponibles/${turno.Fecha.split('T')[0]}?personal=${turno.FK_ID_personal || 2}`,
@@ -92,7 +87,7 @@ export default function MisTurnos() {
     }
 
     try {
-      const res = await fetch(`https://beautynails-1.onrender.com/turnos/${turnoId}`, {
+      const res = await fetch(`https://beautynails-1.onrender.com/turnos/turnosup/${turnoId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -100,8 +95,8 @@ export default function MisTurnos() {
         },
         body: JSON.stringify({
           Fecha: nuevaFecha,
-          Hora: nuevaHora + ':00',
-          Estado: estadoActual
+          Hora: nuevaHora,
+          Estado: estadoActual // Mantener el estado actual
         })
       });
 
@@ -147,7 +142,7 @@ export default function MisTurnos() {
           <h1>BeautyNails</h1>
         </div>
         <div className="user-info">
-          <span>Hola, {user?.Nombre}</span>
+          
           <button className="btn-cerrar-sesion" onClick={cerrarSesion}>
             Cerrar Sesión
           </button>
@@ -169,6 +164,7 @@ export default function MisTurnos() {
             {turnos.map(turno => (
               <div key={turno.ID_turnos} className="turno-card">
                 {editandoTurno === turno.ID_turnos ? (
+                  // MODO EDICIÓN
                   <div className="turno-edicion">
                     <h3>{turno.Nombre_servicio}</h3>
                     <div className="form-edicion">
@@ -224,8 +220,7 @@ export default function MisTurnos() {
                       </span>
                     </div>
                     <div className="turno-detalles">
-                      {/* ✅ CORRECCIÓN PRINCIPAL: Usa formatearFecha() */}
-                      <p><strong>Fecha:</strong> {formatearFecha(turno.Fecha)}</p>
+                      <p><strong>Fecha:</strong> {new Date(turno.Fecha)}</p>
                       <p><strong>Hora:</strong> {turno.Hora}</p>
                       <p><strong>Duración:</strong> {turno.Duracion}</p>
                       <p><strong>Precio:</strong> ${turno.Precio}</p>
