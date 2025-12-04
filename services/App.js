@@ -15,11 +15,11 @@ const pago = require('./routes/PagosRoutes');
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec)); 
 
-app.use('/', pago);
-app.use('/', personal);
-app.use('/api', usuarios);
-app.use('/', turnos);
-app.use('/', servicios);
+app.use('/api/usuarios', usuarios);
+app.use('/api/turnos', turnos);
+app.use('/api/servicios', servicios);
+app.use('/api/pagos', pago);
+app.use('/api/personal', personal);
 
 
 module.exports = app;
