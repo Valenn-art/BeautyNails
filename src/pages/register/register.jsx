@@ -16,7 +16,7 @@ export default function Register() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://beautynails-1.onrender.com/registrar", {
+      const response = await fetch("https://beautynails-1.onrender.com/usuarios/registrar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

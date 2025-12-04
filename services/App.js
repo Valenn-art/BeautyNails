@@ -20,11 +20,11 @@ const servicios = require('./routes/ServiciosRoutes');
 const personal = require('./routes/PersonalRoutes');
 const pago = require('./routes/PagosRoutes');
 
-app.use('/', usuarios);
-app.use('/', turnos);
+app.use('/usuarios', usuarios);
+app.use('/turnos', turnos);
 app.use('/', servicios);
-app.use('/', personal);
-app.use('/', pago);
+app.use('/personal', personal);
+app.use('/pago', pago);
 
 app.use(express.static(path.join(__dirname, '../dist')));
 
