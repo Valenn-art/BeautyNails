@@ -103,7 +103,7 @@ router.post("/crearturnos", turnosController.createTurno);
  *       500:
  *         description: Error en el servidor
  */
-router.put("/turnos/:id", turnosController.updateTurno);
+router.put("/turnosup/:id", turnosController.updateTurno);
 /**
  * @swagger
  * /turnos/{id}:
@@ -122,7 +122,7 @@ router.put("/turnos/:id", turnosController.updateTurno);
  *       500:
  *         description: Error en el servidor
  */
-router.delete("/turnos/:id", turnosController.deleteTurno);
+router.delete("/turnosdel/:id", turnosController.deleteTurno);
 /**
  * @swagger
  * /mis-turnos/{usuario_id}:
