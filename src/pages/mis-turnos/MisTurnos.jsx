@@ -25,7 +25,7 @@ export default function MisTurnos() {
 
   const cargarTurnos = async () => {
     try {
-      const res = await fetch(`https://beautynails-1.onrender.com/mis-turnos/${user.ID_usuarios}`, {
+      const res = await fetch(`https://beautynails-1.onrender.com/turnos/mis-turnos/${user.ID_usuarios}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -49,7 +49,7 @@ export default function MisTurnos() {
     if (!confirm("¿Estás segura de que querés cancelar este turno?")) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/turnos/${turnoId}`, {
+      const res = await fetch(`https://beautynails-1.onrender.com/turnos/${turnoId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -71,7 +71,7 @@ export default function MisTurnos() {
     // Cargar horarios disponibles para esa fecha
     try {
       const res = await fetch(
-        `http://localhost:3000/turnos/disponibles/${turno.Fecha.split('T')[0]}?personal=${turno.FK_ID_personal || 2}`,
+        `https://beautynails-1.onrender.com/turnos/disponibles/${turno.Fecha.split('T')[0]}?personal=${turno.FK_ID_personal || 2}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       const horarios = await res.json();
@@ -87,7 +87,7 @@ export default function MisTurnos() {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/turnos/${turnoId}`, {
+      const res = await fetch(`https://beautynails-1.onrender.com/turnos/${turnoId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ export default function MisTurnos() {
   const cargarHorariosParaNuevaFecha = async (fecha, personalId) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/turnos/disponibles/${fecha}?personal=${personalId || 2}`,
+        `https://beautynails-1.onrender.com/turnos/disponibles/${fecha}?personal=${personalId || 2}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       const horarios = await res.json();
