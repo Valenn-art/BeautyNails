@@ -20,7 +20,7 @@ const servicios = require('./routes/ServiciosRoutes');
 const personal = require('./routes/PersonalRoutes');
 const pago = require('./routes/PagosRoutes');
 
-app.use('/api', usuarios);
+app.use('/', usuarios);
 app.use('/', turnos);
 app.use('/', servicios);
 app.use('/', personal);
