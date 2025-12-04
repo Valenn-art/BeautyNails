@@ -77,7 +77,7 @@ export default function ReservarTurno() {
 
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:3000/crearturnos', {
+      const res = await fetch('https://beautynails-1.onrender.com/turnos/crearturnos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

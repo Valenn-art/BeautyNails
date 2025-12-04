@@ -38,7 +38,7 @@ export default function AdminPanel() {
   const cargarServicios = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:3000/servicios/admin', {
+      const res = await fetch('https://beautynails-1.onrender.com/servicios/admin', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -62,7 +62,7 @@ export default function AdminPanel() {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/nuevoServicio', {
+      const res = await fetch('https://beautynails-1.onrender.com/nuevoServicio', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

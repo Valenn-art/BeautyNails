@@ -49,7 +49,7 @@ export default function MisTurnos() {
     if (!confirm("¿Estás segura de que querés cancelar este turno?")) return;
 
     try {
-      const res = await fetch(`https://beautynails-1.onrender.com/turnos/${turnoId}`, {
+      const res = await fetch(`https://beautynails-1.onrender.com/turnos/turnosall/${turnoId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });

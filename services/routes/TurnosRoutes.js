@@ -20,7 +20,7 @@ const turnosController = require("../controller/TurnosController.js");
  *       500:
  *         description: Error en el servidor
  */
-router.get("/turnos", turnosController.getTurnos);
+router.get("/turnosall", turnosController.getTurnos);
 
 /**
  * @swagger
@@ -143,6 +143,6 @@ router.delete("/turnos/:id", turnosController.deleteTurno);
  */
 router.get("/mis-turnos/:usuario_id", turnosController.getTurnosByUsuario);
 
-router.get("/turnos/disponibles/:fecha", turnosController.getDisponibles);
+router.get("/disponibles/:fecha", turnosController.getDisponibles);
 
 module.exports = router;
