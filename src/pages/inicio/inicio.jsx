@@ -76,7 +76,7 @@ const Inicio = () => {
                 {user ? (
                     <div className="user-info">
                         
-                        <button className="btn-mis-turnos" onClick={() => navigate('/https://beautynails-1.onrender.com/mis-turnos')}>
+                        <button className="btn-mis-turnos" onClick={() => navigate('/mis-turnos')}>
                             Mis Turnos
                         </button>
                         <button className="btn-cerrar-sesion" onClick={cerrarSesion}>
@@ -85,10 +85,10 @@ const Inicio = () => {
                     </div>
                 ) : (
                     <nav className="nav-buttons">
-                        <button className="btn-login" onClick={() => navigate('https://beautynails-1.onrender.com/login')}>
+                        <button className="btn-login" onClick={() => navigate('/login')}>
                             Iniciar Sesión
                         </button>
-                        <button className="btn-register" onClick={() => navigate('https://beautynails-1.onrender.com/registro')}>
+                        <button className="btn-register" onClick={() => navigate('/registro')}>
                             Registrarse
                         </button>
                     </nav>
