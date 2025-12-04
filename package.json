@@ -5,11 +5,11 @@
   "scripts": {
     "dev": "concurrently \"npm run dev:backend\" \"vite\"",
     "dev:frontend": "vite",
-    "dev:backend": "nodemon services/app.js",
+    "dev:backend": "nodemon services/server.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node services/app.js"
+    "start": "node services/server.js"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
