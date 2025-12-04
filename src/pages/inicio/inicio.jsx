@@ -76,7 +76,7 @@ const Inicio = () => {
                 {user ? (
                     <div className="user-info">
                         
-                        <button className="btn-mis-turnos" onClick={() => navigate('/mis-turnos')}>
+                        <button className="btn-mis-turnos" onClick={() => navigate('/https://beautynails-1.onrender.com/mis-turnos')}>
                             Mis Turnos
                         </button>
                         <button className="btn-cerrar-sesion" onClick={cerrarSesion}>
@@ -85,10 +85,10 @@ const Inicio = () => {
                     </div>
                 ) : (
                     <nav className="nav-buttons">
-                        <button className="btn-login" onClick={() => navigate('/login')}>
+                        <button className="btn-login" onClick={() => navigate('https://beautynails-1.onrender.com/login')}>
                             Iniciar Sesión
                         </button>
-                        <button className="btn-register" onClick={() => navigate('/registro')}>
+                        <button className="btn-register" onClick={() => navigate('https://beautynails-1.onrender.com/registro')}>
                             Registrarse
                         </button>
                     </nav>
@@ -102,7 +102,7 @@ const Inicio = () => {
                         <div key={servicio.ID_servicios} className="servicio-card">
                             <div className="servicio-image">
                                 <img 
-                                    src={`/img/${servicio.Nombre_servicio.toLowerCase().replace(/\s+/g, '')}.jpeg`} 
+                                    src={`../../../img/${servicio.Nombre_servicio.toLowerCase().replace(/\s+/g, '')}.jpeg`} 
                                     alt={servicio.Nombre_servicio}
                                     onError={(e) => {
                                         e.target.src = '/img/default.jpg';
