@@ -102,10 +102,10 @@ const Inicio = () => {
                         <div key={servicio.ID_servicios} className="servicio-card">
                             <div className="servicio-image">
                                 <img 
-                                    src={`../../../img/${servicio.Nombre_servicio.toLowerCase().replace(/\s+/g, '')}.jpeg`} 
+                                    src={`/public/img/${servicio.Nombre_servicio.toLowerCase().replace(/\s+/g, '')}.jpeg`} 
                                     alt={servicio.Nombre_servicio}
                                     onError={(e) => {
-                                        e.target.src = '/img/default.jpg';
+                                        e.target.src = '/public/img/default.jpg';
                                     }}
                                 /> 
                             </div>
