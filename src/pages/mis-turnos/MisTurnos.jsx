@@ -220,7 +220,7 @@ export default function MisTurnos() {
                       </span>
                     </div>
                     <div className="turno-detalles">
-                      <p><strong>Fecha:</strong> {new Date(turno.Fecha)}</p>
+                      <p><strong>Fecha:</strong> {new Date(turno.Fecha).toLocaleDateString('es-AR')}</p>
                       <p><strong>Hora:</strong> {turno.Hora}</p>
                       <p><strong>Duración:</strong> {turno.Duracion}</p>
                       <p><strong>Precio:</strong> ${turno.Precio}</p>
