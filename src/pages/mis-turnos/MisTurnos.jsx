@@ -95,7 +95,7 @@ export default function MisTurnos() {
         },
         body: JSON.stringify({
           Fecha: nuevaFecha,
-          Hora: nuevaHora + ':00',
+          Hora: nuevaHora,
           Estado: estadoActual // Mantener el estado actual
         })
       });
