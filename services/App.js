@@ -26,23 +26,10 @@ app.use('/', servicios);
 app.use('/', personal);
 app.use('/', pago);
 
-// ✅ PRODUCCIÓN: Servir archivos estáticos del build de Vite
-if (process.env.NODE_ENV === 'production') {
-  // Servir archivos estáticos desde la carpeta dist (build de Vite)
-  app.use(express.static(path.join(__dirname, '../dist')));
-  
-  // Todas las rutas que no sean de API deben servir index.html
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../dist', 'index.html'));
-  });
-}
+app.use(express.static(path.join(__dirname, '../dist')));
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor corriendo en puerto ${PORT}`);
-  if (process.env.NODE_ENV === 'production') {
-    console.log('📦 Sirviendo frontend desde /dist');
-  }
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 module.exports = app;
